@@ -38,9 +38,9 @@ export default {
   rate: 'Rate',
   'make-bet': 'Make bet',
   'room-bets': 'Room bets',
-  'no-bets': 'No new bets, you can make first! ',
-  'await-start': 'Please wait ...',
+  'no-bets': 'No new bets, you can make the first! ',
+  'await-start': 'Please wait...',
   'start-after': 'Start after',
   'withdraw-on': 'Withdraw on',
-  'game-started': 'Game has already started, wait until the end ',
+  'game-started': 'Game has already started, wait until the end',
 }

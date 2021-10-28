@@ -10,7 +10,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'casino',
+    title: 'Moros DAO',
     htmlAttrs: {
       lang: 'ru',
     },
@@ -88,7 +88,14 @@ export default {
         iso: 'en-US',
         name: 'English',
         file: 'en-US.js',
-        icon: '/img/icon/en.svg',
+        icon: '/img/icon/flags/128px-us.png',
+      },
+      {
+        code: 'br',
+        iso: 'pt-BR',
+        name: 'Português',
+        file: 'pt-BR.js',
+        icon: '/img/icon/flags/128px-br.png',
       },
       {
         code: 'ru',
@@ -98,7 +105,7 @@ export default {
         icon: '/img/icon/ru.svg',
       },
     ],
-    defaultLocale: 'ru',
+    defaultLocale: 'br',
     lazy: true,
     langDir: 'lang/',
     strategy: 'no_prefix',
