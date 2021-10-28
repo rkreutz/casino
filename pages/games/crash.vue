@@ -163,7 +163,7 @@ export default {
           {
             group: 'default',
             type: 'error',
-            text: 'Недостаточно средств',
+            text: $t('notenoughfunds'),
           },
           4000
         )

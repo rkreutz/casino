@@ -43,4 +43,7 @@ export default {
   'start-after': 'Start after',
   'withdraw-on': 'Withdraw on',
   'game-started': 'Game has already started, wait until the end',
+  
+  freecoins: 'Free coins',
+  notenoughfunds: 'Not enough funds',
 }

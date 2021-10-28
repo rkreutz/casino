@@ -22,7 +22,7 @@
       </div>
       <div ref="crashChartContainer" class="crash__chart">
         <div v-show="timeleft > 0 && isActive" class="crash__countdown">
-          <span class="w-full text-center crash__start-at">Запуск через</span>
+          <span class="w-full text-center crash__start-at">{{ $t('await-start') }}</span>
           <span class="flex items-center"
             ><svg class="w-6 h-5 mr-2">
               <use :xlink:href="`/img/icon/free/sprite.svg#clock`"></use></svg

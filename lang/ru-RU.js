@@ -43,4 +43,7 @@ export default {
   'start-after': 'Запуск через',
   'withdraw-on': 'Вывести на',
   'game-started': 'Игра уже началась, дождитесь окончания',
+
+  freecoins: 'Бесплатные монеты',
+  notenoughfunds: 'Недостаточно средств',
 }
