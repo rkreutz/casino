@@ -1,20 +1,51 @@
 export default {
   help: 'Ajuda',
+  'description-help':
+    '<b>Tem dúvidas?</b> Verifique as respostas às perguntas mais frequentes sobre o site <b>EZCASH</b>. Provavelmente, você encontrará a resposta à sua pergunta aqui. Se você não encontrou a resposta para sua pergunta, entre em contato com nosso serviço de suporte. Teremos o maior prazer em ajudá-lo!',
+  'business-hours':
+    'Horário de funcionamento',
+  'normal-days':
+    'Segundas - Quintas',
+  'special-days':
+    'Sextas - Domingos',
+  'customer-support':
+    'Atendimento ao cliente (AO VIVO)',
+  'customer-support-chat-position':
+    'Chat online no canto inferior direito da tela',
+  'average-response-time':
+    'Tempo médio de resposta',
+  'time-in-minutes':
+    'minutos',
+  'time-in-hours':
+    'horas',
+  'support-service':
+    'Serviço de suporte (EMAIL)',
+  'customer-support-email':
+    'teste123@gmail.com.br',
+  'technical-department':
+    'Departamento técnico (EMAIL)',
+  'technical-support-email':
+    'tech123@gmail.com.br',
+  'frequently-asked-questions':
+    'Perguntas frequentes',
+  'restrictions':
+    'Restrições',
+
   menu: 'Menu',
   registration: 'Registrar-se',
-  login: 'Logar',
+  login: 'Entrar',
   'profile-edit': 'Editar perfil',
   'profile-you': 'Seu perfil',
   'profile-exit': 'Sair',
   play: 'Jogar',
   'description-wheel':
-    'A version of roulette with 54 numbers: 26 black, 17 yellow, 10 red and 1 green. Each round the system chooses a random number. The task is extremely simple: place a bet on the color that you think will fall out. ',
+    'Uma versão de roleta com 54 números: 26 pretos, 17 amarelos, 10 vermelhos e 1 verde. A cada rodada o sistema escolher um número aleatório. O objetivo extremamente é simples: Aposte na cor que você acha que vai cair.',
   'description-pvp':
     'Este é um modo extremamente simples mas bastante interessante. Todos os participantes fazem apostas com as moedas e um banco comum é formado.',
   'description-crash':
     'Esse é um jogo no qual você precisa prever em que coeficiente a quebra ocorrerá e o jogo acabará.',
   'description-dice':
-    'A game mode in which you yourself choose the chance of winning, but remember: the higher the odds, the less chance of winning.',
+    'Um modo de jogo no qual você mesmo escolhe as chances de ganhar, mas lembre-se: Quanto maior as chances, menor a chance de ganhar.',
   'description-coinflip':
     'O clássico jogo da moeda que todo mundo conhece. Você precisa escolher «cara» ou «coroa» e com a probabilidade de 50% você poderá dobrar seu dinheiro.',
   bonus: 'Bônus',
@@ -35,7 +66,7 @@ export default {
   'select-image': 'Por favor selecione uma imagem para o avatar',
   'bet-amount': 'Valor da aposta',
   autocashout: 'Retirada automática',
-  rate: 'Rate',
+  rate: 'Coeficiente',
   'make-bet': 'Fazer aposta',
   'room-bets': 'Salas de apostas',
   'no-bets': 'Nenhuma aposta nova, você pode fazer a primeira!',

@@ -1,5 +1,36 @@
 export default {
   help: 'Помощь',
+  'description-help':
+    '<b>Возникли вопросы?</b> Ознакомьтесь с ответами на самые популярные вопросы, связанные с работой сайта <b>EZCASH</b>. Скорее всего, Вы найдете ответ на свой вопрос здесь. Если вы не нашли ответ на свой вопрос – обратитесь в нашу службу поддержки. Вам с удовольствием помогут!',
+  'business-hours':
+    'Часы работы',
+  'normal-days':
+    'Понедельник - Четверг',
+  'special-days':
+    'Пятница - Воскресенье',
+  'customer-support':
+    'Служба поддержки (LIVE)',
+  'customer-support-chat-position':
+    'Онлайн чат в правом нижнем углу экрана',
+  'average-response-time':
+    'Среднее время ответа',
+  'time-in-minutes':
+    'минут',
+  'time-in-hours':
+    'часов',
+  'support-service':
+    'Служба поддержки (EMAIL)',
+  'customer-support-email':
+    'help@ezcash.gg',
+  'technical-department':
+    'Технический отдел (EMAIL)',
+  'technical-support-email':
+    'tech@ezcash.gg',
+  'frequently-asked-questions':
+    'Ответы на популярные вопросы',
+  'restrictions':
+    'Ограничения',
+    
   menu: 'Меню',
   registration: 'Регистрация',
   login: 'Вход',
