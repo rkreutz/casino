@@ -120,10 +120,10 @@ const crashInstance = io
   })
 
 Event.on('crash::start', async () => {
-  const timeout = 1000 * 15
+  const timeout = 1000 * 5 //AWAITING TIME DO CRASH GAME
   const step = 0.01
   const start = Date.now() + timeout
-  const rate = rnd({ min: 1, max: 3 })
+  const rate = Math.max(0.98 * (2 ** 32) / ((2 ** 32) - (rnd({ min: 0, max: (2 ** 32) - 1 }) / 1.25)), 1).toFixed(2) // Based on https://bitcointalk.org/index.php?topic=5265896.0
 
   const game = await Crash.create({
     start_at: start,
@@ -184,7 +184,7 @@ Event.on('crash::start', async () => {
         })
       }
       current += step
-    }, 100)
+    }, 10) //TICK RATE DO CRASH GAME
   }, timeout)
 })
 
