@@ -6,7 +6,7 @@
       </svg>
     </template>
     <template #header>
-      <h3>Вход</h3>
+      <h3>{{ $t('login') }}</h3>
     </template>
     <section-social class="mb-5" />
     <form class="grid grid-cols-1 gap-5" @submit.prevent="login">

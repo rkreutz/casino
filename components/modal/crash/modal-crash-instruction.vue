@@ -27,9 +27,7 @@
     <div class="flex items-center flex-wrap mt-3 space-x-3">
       <t-button variant="white" @click="step -= 1">
         <div class="flex justify-center">
-          <svg
-            class="w-4 opacity-70 h-3 ml-2 transform -rotate-180 origin-center"
-          >
+          <svg class="w-4 opacity-70 h-3 ml-2 transform -rotate-180 origin-center">
             <use xlink:href="/img/icon/free/sprite.svg#arr-next"></use>
           </svg></div
       ></t-button>

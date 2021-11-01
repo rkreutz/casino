@@ -1,39 +1,25 @@
 export default {
   help: 'Ajuda',
-  'description-help':
-    '<b>Tem dúvidas?</b> Verifique as respostas às perguntas mais frequentes sobre o site <b>EZCASH</b>. Provavelmente, você encontrará a resposta à sua pergunta aqui. Se você não encontrou a resposta para sua pergunta, entre em contato com nosso serviço de suporte. Teremos o maior prazer em ajudá-lo!',
-  'business-hours':
-    'Horário de funcionamento',
-  'normal-days':
-    'Segundas - Quintas',
-  'special-days':
-    'Sextas - Domingos',
-  'customer-support':
-    'Atendimento ao cliente (AO VIVO)',
-  'customer-support-chat-position':
-    'Chat online no canto inferior direito da tela',
-  'average-response-time':
-    'Tempo médio de resposta',
-  'time-in-minutes':
-    'minutos',
-  'time-in-hours':
-    'horas',
-  'support-service':
-    'Serviço de suporte (EMAIL)',
-  'customer-support-email':
-    'teste123@gmail.com.br',
-  'technical-department':
-    'Departamento técnico (EMAIL)',
-  'technical-support-email':
-    'tech123@gmail.com.br',
-  'frequently-asked-questions':
-    'Perguntas frequentes',
-  'restrictions':
-    'Restrições',
+  'description-help':'<b>Tem dúvidas?</b> Verifique as respostas às perguntas mais frequentes sobre o site <b>EZCASH</b>. Provavelmente, você encontrará a resposta à sua pergunta aqui. Se você não encontrou a resposta para sua pergunta, entre em contato com nosso serviço de suporte. Teremos o maior prazer em ajudá-lo!',
+  'business-hours':'Horário de funcionamento',
+  'normal-days':'Segundas - Quintas',
+  'special-days':'Sextas - Domingos',
+  'customer-support':'Atendimento ao cliente (AO VIVO)',
+  'customer-support-chat-position':'Chat online no canto inferior direito da tela',
+  'average-response-time':'Tempo médio de resposta',
+  'time-in-minutes':'minutos',
+  'time-in-hours':'horas',
+  'support-service':'Serviço de suporte (EMAIL)',
+  'customer-support-email':'teste123@gmail.com.br',
+  'technical-department':'Departamento técnico (EMAIL)',
+  'technical-support-email':'tech123@gmail.com.br',
+  'frequently-asked-questions':'Perguntas frequentes',
+  'restrictions':'Restrições',
 
   menu: 'Menu',
   registration: 'Registrar-se',
   login: 'Entrar',
+  'loginoremail': 'Login ou Email',
   'profile-edit': 'Editar perfil',
   'profile-you': 'Seu perfil',
   'profile-exit': 'Sair',

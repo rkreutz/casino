@@ -17,47 +17,18 @@
           }}</label>
           <div class="mb-3 relative">
             <t-input id="amount" v-model="bet.amount"></t-input>
-            <div
-              class="absolute top-1/2 right-3 transform -translate-y-1/2 space-x-2 flex items-center"
-            >
-              <t-button
-                type="button"
-                variant="outline"
-                class="bg-gray-100 border-none w-10"
-                @click="bet.amount *= 2"
-                >X2</t-button
-              >
-              <t-button
-                type="button"
-                variant="outline"
-                class="bg-gray-100 border-none w-10"
-                @click="bet.amount /= 2"
-                >1/2</t-button
-              >
+            <div class="absolute top-1/2 right-3 transform -translate-y-1/2 space-x-2 flex items-center">
+              <t-button type="button" variant="outline" class="bg-gray-100 border-none w-10" @click="bet.amount *= 2" >X2</t-button>
+              <t-button type="button" variant="outline" class="bg-gray-100 border-none w-10" @click="bet.amount /= 2" >1/2</t-button>
             </div>
           </div>
           <div class="grid grid-cols-3 gap-2 mb-4 sm:grid-cols-6">
-            <t-button type="button" variant="outline" @click="bet.amount += 1"
-              >+1</t-button
-            >
-            <t-button type="button" variant="outline" @click="bet.amount += 5"
-              >+5</t-button
-            >
-            <t-button type="button" variant="outline" @click="bet.amount += 10"
-              >+10</t-button
-            >
-            <t-button type="button" variant="outline" @click="bet.amount += 100"
-              >+100</t-button
-            >
-            <t-button type="button" variant="outline" @click="bet.amount += 500"
-              >+500</t-button
-            >
-            <t-button
-              type="button"
-              variant="outline"
-              @click="bet.amount += 100000"
-              >Все</t-button
-            >
+            <t-button type="button" variant="outline" @click="bet.amount += 1">+1</t-button>
+            <t-button type="button" variant="outline" @click="bet.amount += 5">+5</t-button>
+            <t-button type="button" variant="outline" @click="bet.amount += 10">+10</t-button>
+            <t-button type="button" variant="outline" @click="bet.amount += 100">+100</t-button>
+            <t-button type="button" variant="outline" @click="bet.amount += 500">+500</t-button>
+            <t-button type="button" variant="outline" @click="bet.amount += 100000">Все</t-button>
           </div>
           <label class="mb-3 font-semibold text-md" for="auto">{{
             $t('autocashout')

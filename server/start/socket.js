@@ -184,7 +184,7 @@ Event.on('crash::start', async () => {
         })
       }
       current += step
-    }, 10) //TICK RATE DO CRASH GAME
+    }, 25) //TICK RATE DO CRASH GAME
   }, timeout)
 })
 

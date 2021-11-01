@@ -1,39 +1,25 @@
 export default {
   help: 'Help',
-  'description-help':
-    '<b>Got questions?</b> Check out the answers to the most frequently asked questions about the <b>EZCASH</b> website. Most likely, you will find the answer to your question here. If you have not found the answer to your question, please contact our support service. We will be happy to help you!',
-  'business-hours':
-    'Business Hours',
-  'normal-days':
-    'Mondays - Thurdays',
-  'special-days':
-    'Fridays - Sundays',
-  'customer-support':
-    'Customer Support (LIVE)',
-  'customer-support-chat-position':
-    'Online chat in the lower right corner of the screen',
-  'average-response-time':
-    'Average response time',
-  'time-in-minutes':
-    'minutes',
-  'time-in-hours':
-    'hours',
-  'support-service':
-    'Support service (EMAIL)',
-  'customer-support-email':
-    'teste123@gmail.com',
-  'technical-department':
-    'Technical department (EMAIL)',
-  'technical-support-email':
-    'tech123@gmail.com',
-  'frequently-asked-questions':
-    'Frequently asked questions',
-  'restrictions':
-    'Restrictions',
+  'description-help':'<b>Got questions?</b> Check out the answers to the most frequently asked questions about the <b>EZCASH</b> website. Most likely, you will find the answer to your question here. If you have not found the answer to your question, please contact our support service. We will be happy to help you!',
+  'business-hours':'Business Hours',
+  'normal-days':'Mondays - Thurdays',
+  'special-days':'Fridays - Sundays',
+  'customer-support':'Customer Support (LIVE)',
+  'customer-support-chat-position':'Online chat in the lower right corner of the screen',
+  'average-response-time':'Average response time',
+  'time-in-minutes':'minutes',
+  'time-in-hours':'hours',
+  'support-service':'Support service (EMAIL)',
+  'customer-support-email':'teste123@gmail.com',
+  'technical-department':'Technical department (EMAIL)',
+  'technical-support-email':'tech123@gmail.com',
+  'frequently-asked-questions':'Frequently asked questions',
+  'restrictions':'Restrictions',
   
   menu: 'Menu',
   registration: 'Registration',
   login: 'Login',
+  'loginoremail': 'Login or Email',
   'profile-edit': 'Edit profile',
   'profile-you': 'Your profile',
   'profile-exit': 'Logout',
