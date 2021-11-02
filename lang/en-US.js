@@ -15,7 +15,16 @@ export default {
   'technical-support-email':'tech123@gmail.com',
   'frequently-asked-questions':'Frequently asked questions',
   'restrictions':'Restrictions',
-  
+
+  instructions: 'Instructions',
+  'how-to-play':'How to play',
+  'button-next-step':'Next step',
+  'button-start-making-money':'Start making money!',
+  'button-further':'Further',
+  'crash-instruction-page-1':'Enter the bet amount and the value of the autocashout (optional) - with the selected autocashout, you will automatically withdraw the winnings when the specified coefficient is reached.',
+  'crash-instruction-page-2':'Click "Make bet" and watch the growth of the chart.',
+  'crash-instruction-page-3':'Press the "Withdraw" button before the chart crashes and the money burns out, or take it using autocashout.',
+
   menu: 'Menu',
   registration: 'Registration',
   login: 'Login',
@@ -43,8 +52,7 @@ export default {
   'your-profile': 'Your profile',
   'your-login': 'Your login',
   'your-email': 'Your E-mail',
-  'your-email-description':
-    'Confirmation link will be sent to the specified mail',
+  'your-email-description':'Confirmation link will be sent to the specified mail',
   'new-password': 'New password',
   'repeat-new-password': 'Repeat new password',
   'change-password': 'Change password',
@@ -52,7 +60,7 @@ export default {
   'select-image': 'Please select image for avatar',
   'bet-amount': 'Bet amount',
   autocashout: 'Autocashout',
-  rate: 'Rate',
+  rate: 'Coefficient',
   'make-bet': 'Make bet',
   'room-bets': 'Room bets',
   'no-bets': 'No new bets, you can make the first! ',
@@ -60,7 +68,7 @@ export default {
   'start-after': 'Start after',
   'withdraw-on': 'Withdraw on',
   'game-started': 'Game has already started, wait until the end',
-  
+
   freecoins: 'Free coins',
   notenoughfunds: 'Not enough funds',
 }

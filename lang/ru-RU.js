@@ -15,7 +15,16 @@ export default {
   'technical-support-email':'tech@ezcash.gg',
   'frequently-asked-questions':'Ответы на популярные вопросы',
   'restrictions':'Ограничения',
-    
+
+  instructions: 'Instructions',
+  'how-to-play':'Как играть',
+  'button-next-step':'Следующий шаг',
+  'button-start-making-money':'Начать зарабывать!',
+  'button-further':'Далее',
+  'crash-instruction-page-1':'Введите сумму ставки и значение автовывода (по желанию) – при выбранном автовыводе вы автоматически заберете выигрыш по достижению указанного коэффициента.',
+  'crash-instruction-page-2':'Нажмите «Сделать ставку» и следите за ростом графика.',
+  'crash-instruction-page-3':'Нажмите кнопку «Забрать» до того, как график обрушится и деньги сгорят, или заберите их с помощью автовывода.',
+
   menu: 'Меню',
   registration: 'Регистрация',
   login: 'Вход',
@@ -43,8 +52,7 @@ export default {
   'your-profile': 'Ваш профиль',
   'your-login': 'Ваш логин',
   'your-email': 'Ваша почта',
-  'your-email-description':
-    'На указанную почту будет отправлена ссылка для подтверждения',
+  'your-email-description':'На указанную почту будет отправлена ссылка для подтверждения',
   'new-password': 'Новый пароль',
   'repeat-new-password': 'Повторите новый пароль',
   'change-password': 'Смена пароля',

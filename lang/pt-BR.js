@@ -16,6 +16,15 @@ export default {
   'frequently-asked-questions':'Perguntas frequentes',
   'restrictions':'Restrições',
 
+  instructions: 'Instructions',
+  'how-to-play':'Como jogar',
+  'button-next-step':'Próximo passo',
+  'button-start-making-money':'Começar a fazer dinheiro!',
+  'button-further':'Adiante',
+  'crash-instruction-page-1':'Insira o valor da aposta e o valor do coeficiente da retirada automática (opcional) - com o valor da retirada automática selecionado, você ira automaticamente retirar os ganhos quando o coeficiente especificado for alcançado.',
+  'crash-instruction-page-2':'Clique em "Fazer aposta" e veja o crescimento do gráfico.',
+  'crash-instruction-page-3':'Aperte no botão "Sacar" antes que o gráfico quebre e o dinheiro seja perdido ou pegue-o usando a retirada automática.',
+
   menu: 'Menu',
   registration: 'Registrar-se',
   login: 'Entrar',
@@ -43,8 +52,7 @@ export default {
   'your-profile': 'Seu perfil',
   'your-login': 'Seu login',
   'your-email': 'Seu E-mail',
-  'your-email-description':
-    'O link de confirmação será enviado para o e-mail especificado',
+  'your-email-description':'O link de confirmação será enviado para o e-mail especificado',
   'new-password': 'Nova senha',
   'repeat-new-password': 'Repetir nova senha',
   'change-password': 'Trocar senha',
