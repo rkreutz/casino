@@ -122,106 +122,106 @@ const coinflipInstance = io
       })
   })
 
-  Event.on('coinflip::start', async () => {
-    const timeout = 1000 * 10 //AWAITING TIME DO COINFLIP GAME EM SEGUNDOS
-    const step = 0.01
-    const start = Date.now() + timeout
-    const rate = Math.round(rnd({ min: 0, max: 1 }))
-  
-    const game = await Coinflip.create({
-      start_at: start,
-      rate_final: rate,
-    })
-  
-    startCoinflip()
-  
-    setTimeout(() => {
-      const interval = setInterval(async () => {
-        game.rate_current = current.toFixed(2)
-        await game.save()
-        const bets = await game.bets().fetch()
-  
-        if (current >= game.rate_final) {
-          current = 1
-          const losed = await game.bets().where('status', 'await').update({
-            rate_final: game.rate_final,
-            status: 'lose',
-          })
-          if (losed) {
-            coinflipInstance.emit('bet:result', {
-              bets: await game
-                .bets()
-                .where('status', 'lose')
-                .with('user')
-                .fetch(),
-            })
-          }
-          coinflipInstance.emit('game:final', { rate: game.rate_final })
-          setTimeout(() => {
-            coinflipInstance.emit('game:new', { timeleft: timeout })
-            Event.fire('coinflip::start')
-          }, 5000)
-          return clearInterval(interval)
-        } else {
-          const winAuto = bets.rows.filter(
-            (bet) =>
-              bet.rate_auto && bet.status === 'await' && bet.rate_auto <= current
-          )
-          const ids = winAuto.map((x) => x.id)
-          if (ids.length) {
-            await game
+Event.on('coinflip::start', async () => {
+  const timeout = 1000 * 10 //AWAITING TIME DO COINFLIP GAME EM SEGUNDOS
+  const step = 0.01
+  const start = Date.now() + timeout
+  const rate = Math.round(rnd({ min: 0, max: 1 }))
+
+  const game = await Coinflip.create({
+    start_at: start,
+    rate_final: rate,
+  })
+
+  startCoinflip()
+
+  setTimeout(() => {
+    const interval = setInterval(async () => {
+      game.rate_current = current.toFixed(2)
+      await game.save()
+      const bets = await game.bets().fetch()
+
+      if (current >= game.rate_final) {
+        current = 1
+        const losed = await game.bets().where('status', 'await').update({
+          rate_final: game.rate_final,
+          status: 'lose',
+        })
+        if (losed) {
+          coinflipInstance.emit('bet:result', {
+            bets: await game
               .bets()
-              .whereIn('id', ids)
-              .update({ status: 'win', rate_final: current.toFixed(2) })
-            winAuto.forEach(async (bet) => {
-              const user = await User.find(bet.user_id)
-              user.balance += bet.amount * current
-              await user.save()
-            })
-            coinflipInstance.emit('bet:result', {
-              bets: await game.bets().whereIn('id', ids).with('user').fetch(),
-            })
-          }
-          coinflipInstance.emit('game:tick', {
-            rate: current.toFixed(2),
+              .where('status', 'lose')
+              .with('user')
+              .fetch(),
           })
         }
-        current += step
-      }, 25) //TICK RATE DO COINFLIP GAME
-    }, timeout)
-  })
-  
-  async function startCoinflip() {
-    const bots = await User.query()
-      .where('role_id', 2)
-      //.orderByRaw('RAND()')
-      .fetch()
-    const fakes = bots.toJSON().slice(0, rnd({ min: 0, max: 12 }))
-    if (!fakes.length) return
-    fakes.forEach(async (bot) => {
-      const user = await User.find(bot.id)
-      const game = await Coinflip.last()
-      try {
-        setTimeout(async () => {
-          const rate = rnd({ min: 1, max: 2 })
-          await user.crashes().create({
-            amount: rnd({ min: 100, max: 500, integer: true }),
-            rate_auto: rate.toFixed(2),
-            coinflip_id: game.id,
+        coinflipInstance.emit('game:final', { rate: game.rate_final })
+        setTimeout(() => {
+          coinflipInstance.emit('game:new', { timeleft: timeout })
+          Event.fire('coinflip::start')
+        }, 5000)
+        return clearInterval(interval)
+      } else {
+        const winAuto = bets.rows.filter(
+          (bet) =>
+            bet.rate_auto && bet.status === 'await' && bet.rate_auto <= current
+        )
+        const ids = winAuto.map((x) => x.id)
+        if (ids.length) {
+          await game
+            .bets()
+            .whereIn('id', ids)
+            .update({ status: 'win', rate_final: current.toFixed(2) })
+          winAuto.forEach(async (bet) => {
+            const user = await User.find(bet.user_id)
+            user.balance += bet.amount * current
+            await user.save()
           })
-          user.balance -= 100
-          await user.save()
-          coinflipInstance.emit('bet:new', await user.crashes().with('user').last())
-        }, rnd({ min: 2000, max: 14000, integer: true }))
-      } catch (e) {
-        console.log(e)
+          coinflipInstance.emit('bet:result', {
+            bets: await game.bets().whereIn('id', ids).with('user').fetch(),
+          })
+        }
+        coinflipInstance.emit('game:tick', {
+          rate: current.toFixed(2),
+        })
       }
-    })
-  }
-  
-  Event.fire('coinflip::start')
-  
-  
+      current += step
+    }, 25) //TICK RATE DO COINFLIP GAME
+  }, timeout)
+})
+
+async function startCoinflip() {
+  const bots = await User.query()
+    .where('role_id', 2)
+    //.orderByRaw('RAND()')
+    .fetch()
+  const fakes = bots.toJSON().slice(0, rnd({ min: 0, max: 12 }))
+  if (!fakes.length) return
+  fakes.forEach(async (bot) => {
+    const user = await User.find(bot.id)
+    const game = await Coinflip.last()
+    try {
+      setTimeout(async () => {
+        const rate = rnd({ min: 1, max: 2 })
+        await user.crashes().create({
+          amount: rnd({ min: 100, max: 500, integer: true }),
+          rate_auto: rate.toFixed(2),
+          coinflip_id: game.id,
+        })
+        user.balance -= 100
+        await user.save()
+        coinflipInstance.emit('bet:new', await user.crashes().with('user').last())
+      }, rnd({ min: 2000, max: 14000, integer: true }))
+    } catch (e) {
+      console.log(e)
+    }
+  })
+}
+
+Event.fire('coinflip::start')
+
+
 
 //^^----------COINFLIP----------^^
 

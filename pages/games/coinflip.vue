@@ -62,8 +62,8 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import coinflipChart from '~/components/games/crash/crash-chart.vue'
-import coinflipTable from '~/components/games/crash/crash-table.vue'
+import coinflipChart from '~/components/games/coinflip/coinflip-chart.vue'
+import coinflipTable from '~/components/games/coinflip/coinflip-table.vue'
 import ModalCrashInstruction from '~/components/modal/crash/modal-crash-instruction.vue'
 
 export default {
