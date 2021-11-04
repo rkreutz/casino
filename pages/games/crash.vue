@@ -113,6 +113,7 @@ export default {
     },
   },
   beforeMount() {
+    console.log('beforeMount()')
     this.socket = this.$nuxtSocket({
       channel: 'crash',
       extraHeaders: {
