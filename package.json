@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "npx nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -41,6 +41,6 @@
     "postcss": "^8.2.9",
     "prettier": "^2.2.1",
     "sass": "^1.32.8",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.2.0"
   }
 }

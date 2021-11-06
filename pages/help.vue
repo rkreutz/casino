@@ -1,30 +1,24 @@
 <template>
   <section class="container help">
-    <h1 class="mb-6 text-2xl font-black uppercase">Помощь</h1>
+    <h1 class="mb-6 text-2xl font-black uppercase">{{ $t('help') }}</h1>
     <div class="grid grid-cols-1 gap-4 xl:gap-6 xl:grid-cols-4">
       <div
         class="p-4 bg-white xl:p-12 xl:col-span-4 rounded-3xl help__annotation"
       >
-        <p class="max-w-4xl">
-          <b>Возникли вопросы?</b> Ознакомьтесь с ответами на самые популярные
-          вопросы, связанные с работой сайта <b>EZCASH</b>. Скорее всего, Вы
-          найдете ответ на свой вопрос здесь. Если вы не нашли ответ на свой
-          вопрос – обратитесь в нашу службу поддержки. Вам с удовольствием
-          помогут!
-        </p>
+        <p class="max-w-4xl">{{ $t('description-help') }}</p>
       </div>
       <div
         class="flex flex-col items-center px-6 py-12 space-y-5 text-center bg-white rounded-3xl"
       >
         <img src="/img/icon/clock.svg" alt="Часы работы" />
-        <h2 class="text-lg font-semibold">Часы работы</h2>
+        <h2 class="text-lg font-semibold">{{ $t('business-hours') }}</h2>
         <hr class="divider" />
         <div class="flex flex-col items-center">
-          <span>Понедельник - Четверг</span>
+          <span>{{ $t('normal-days') }}</span>
           <strong>8:00 – 22:00</strong>
         </div>
         <div class="flex flex-col items-center">
-          <span>Пятница - Воскресенье</span>
+          <span>{{ $t('special-days') }}</span>
           <strong>10:00 – 20:00</strong>
         </div>
       </div>
@@ -32,46 +26,42 @@
         class="flex flex-col items-center px-3 py-12 space-y-5 text-center bg-white rounded-3xl"
       >
         <img src="/img/icon/help-chat.svg" alt="Служба поддержки (LIVE)" />
-        <h2 class="text-lg font-semibold">Служба поддержки (LIVE)</h2>
+        <h2 class="text-lg font-semibold">{{ $t('customer-support') }}</h2>
         <hr class="divider" />
         <a href="#" class="font-semibold text-primary">
-          Онлайн чат в правом нижнем углу экрана
+          {{ $t('customer-support-chat-position') }}
         </a>
         <div class="flex flex-col items-center">
-          <span>Среднее время ответа</span>
-          <strong>5 минут</strong>
+          <span>{{ $t('average-response-time') }}</span>
+          <strong>5 {{ $t('time-in-minutes') }}</strong>
         </div>
       </div>
       <div
         class="flex flex-col items-center px-3 py-12 space-y-5 text-center bg-white rounded-3xl"
       >
         <img src="/img/icon/help-email.svg" alt="Служба поддержки (EMAIL)" />
-        <h2 class="text-lg font-semibold">Служба поддержки (EMAIL)</h2>
+        <h2 class="text-lg font-semibold">{{ $t('support-service') }}</h2>
         <hr class="divider" />
-        <a href="mailto:help@ezcash.gg" class="font-semibold text-primary">
-          help@ezcash.gg
-        </a>
+        <a href="mailto:$t('customer-support-email')" class="font-semibold text-primary">{{ $t('customer-support-email') }}</a>
         <div class="flex flex-col items-center">
-          <span>Понедельник - Четверг</span>
-          <strong>120 минут</strong>
+          <span>{{ $t('normal-days') }}</span>
+          <strong>120 {{ $t('time-in-minutes') }}</strong>
         </div>
       </div>
       <div
         class="flex flex-col items-center px-3 py-12 space-y-5 text-center bg-white rounded-3xl"
       >
         <img src="/img/icon/help-email.svg" alt="Технический отдел (EMAIL)" />
-        <h2 class="text-lg font-semibold">Технический отдел (EMAIL)</h2>
+        <h2 class="text-lg font-semibold">{{ $t('technical-department') }}</h2>
         <hr class="divider" />
-        <a href="mailto:tech@ezcash.gg" class="font-semibold text-primary">
-          tech@ezcash.gg
-        </a>
+        <a href="mailto:$t('technical-support-email')" class="font-semibold text-primary">{{ $t('technical-support-email') }}</a>
         <div class="flex flex-col items-center">
-          <span>Понедельник - Четверг</span>
-          <strong>48 часов</strong>
+          <span>{{ $t('normal-days') }}</span>
+          <strong>48 {{ $t('time-in-hours') }}</strong>
         </div>
       </div>
       <div class="p-4 bg-white xl:p-12 xl:col-span-4 rounded-3xl">
-        <h2 class="mb-5 text-lg font-semibold">Ответы на популярные вопросы</h2>
+        <h2 class="mb-5 text-lg font-semibold">{{ $t('frequently-asked-questions') }}</h2>
         <div class="help__questions">
           <app-spoiler></app-spoiler>
           <app-spoiler></app-spoiler>
@@ -79,7 +69,7 @@
         </div>
       </div>
       <div class="p-4 bg-white xl:p-12 xl:col-span-4 rounded-3xl">
-        <h2 class="mb-5 text-lg font-semibold">Ограничения</h2>
+        <h2 class="mb-5 text-lg font-semibold">{{ $t('restrictions') }}</h2>
         <div class="grid gap-4 xl:grid-cols-3">
           <div class="flex items-start">
             <img src="/img/icon/close-red.svg" class="mt-1 mr-4" alt="Stop" />

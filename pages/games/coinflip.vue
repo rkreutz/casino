@@ -2,7 +2,7 @@
   <section class="container">
     <modal-crash-instruction />
     <h1 class="flex items-center mb-6 text-2xl font-black uppercase">
-      <span class="flex-1">CRASH</span>
+      <span class="flex-1">COIN FLIP</span>
       <t-button variant="white" @click="$modal.show('crash-instruction')">
         <svg class="w-4 h-6">
           <use xlink:href="/img/icon/free/sprite.svg#info-i"></use>
@@ -30,15 +30,11 @@
             <t-button type="button" variant="outline" @click="bet.amount += 500">+500</t-button>
             <t-button type="button" variant="outline" @click="bet.amount += 100000">Все</t-button>
           </div>
-          <label class="mb-3 font-semibold text-md" for="auto">{{
-            $t('autocashout')
-          }}</label>
-          <t-input
-            id="auto"
-            v-model="bet.rate_auto"
-            class="mb-4"
-            :placeholder="$t('rate')"
-          ></t-input>
+          <label class="mb-3 font-semibold text-md" for="auto">{{$t('chooseside')}}</label>
+          <div class="grid grid-cols-6 gap-2 mb-4 sm:grid-cols-2">
+            <t-button type="button" variant="outline" @click="bet.rate_auto = 0">Cara</t-button>
+            <t-button type="button" variant="outline" @click="bet.rate_auto = 1">Coroa</t-button>
+          </div>
           <hr class="mt-0 mb-4 divider" />
           <t-button
             v-tooltip="{
@@ -54,11 +50,11 @@
       </div>
       <div class="col-span-8 lg:col-span-5">
         <div class="px-8 py-6 bg-white rounded-xl">
-          <crash-chart :socket="socket" />
+          <coinflip-chart :socket="socket2" />
         </div>
       </div>
       <div class="col-span-8">
-        <crash-table :socket="socket" />
+        <coinflip-table :socket="socket2" />
       </div>
     </div>
   </section>
@@ -66,20 +62,19 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import crashChart from '~/components/games/crash/crash-chart.vue'
-import crashTable from '~/components/games/crash/crash-table.vue'
+import coinflipChart from '~/components/games/coinflip/coinflip-chart.vue'
+import coinflipTable from '~/components/games/coinflip/coinflip-table.vue'
 import ModalCrashInstruction from '~/components/modal/crash/modal-crash-instruction.vue'
 
 export default {
-  components: { crashChart, crashTable, ModalCrashInstruction },
+  components: { coinflipChart, coinflipTable, ModalCrashInstruction },
   data() {
     return {
       bet: {
         amount: 0,
         rate_auto: null,
-        currency: 'tibia_coin'
       },
-      socket: null,
+      socket2: null,
     }
   },
   computed: {
@@ -108,20 +103,20 @@ export default {
     'bet.amount'(val) {
       if (val < 0) {
         this.bet.amount = 0
-      } else if (this.$auth.loggedIn && val > this.$auth.user?.wallet.tibia_coin) {
-        this.bet.amount = this.$auth.user.wallet.tibia_coin
+      } else if (this.$auth.loggedIn && val > this.$auth.user?.balance) {
+        this.bet.amount = this.$auth.user.balance
       }
     },
   },
   beforeMount() {
     console.log('beforeMount()')
-    this.socket = this.$nuxtSocket({
-      channel: 'crash',
+    this.socket2 = this.$nuxtSocket({
+      channel: 'coinflip',
       extraHeaders: {
         Authorization: this.$auth.strategy.token.get(),
       },
     })
-    this.socket.emit('game:status')
+    this.socket2.emit('game:status')
   },
   methods: {
     betPlace() {
@@ -129,9 +124,9 @@ export default {
         return this.$modal.show('auth')
       }
       if (this.rate > 1 && this.userBet) {
-        return this.socket.emit('bet:take')
+        return this.socket2.emit('bet:take')
       }
-      if (this.$auth.user.wallet.tibia_coin === 0) {
+      if (this.$auth.user.balance === 0) {
         this.$notify(
           {
             group: 'default',
@@ -141,7 +136,7 @@ export default {
           4000
         )
       }
-      this.socket.emit('bet:make', this.bet, async (data) => {
+      this.socket2.emit('bet:make', this.bet, async (data) => {
         this.$notify(
           {
             group: 'default',

@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <h1 class="mb-6 text-2xl font-black uppercase">Бесплатные монеты</h1>
+    <h1 class="mb-6 text-2xl font-black uppercase">{{ $t('freecoins') }}</h1>
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-5">
       <div class="col-span-2">
         <div class="p-8 bg-white rounded-xl">
