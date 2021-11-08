@@ -31,10 +31,10 @@
                 <CoinIcon class="w-4 h-4 ml-2" />
               </span>
               <template v-if="bet.status === 'win'">
-                <span> x{{ bet.rate_final }} </span>
+                <span> x{{ bet.final_percentage / 100 }} </span>
                 <span>=</span>
                 <p class="text-green-400">
-                  {{ (bet.amount * bet.rate_final).toFixed(2) }}
+                  {{ (bet.amount * bet.final_percentage / 100).toFixed(0) }}
                 </p>
               </template>
             </div>

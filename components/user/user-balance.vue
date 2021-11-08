@@ -5,7 +5,7 @@
         <CoinIcon class="inline-block w-4 h-4 mr-2" />
         &nbsp;
         <span class="font-extrabold leading-none text-md">{{
-          $auth.user.balance
+          $auth.user.wallet.tibia_coin
         }}</span>
       </div>
     </t-button>
