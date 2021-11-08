@@ -25,6 +25,11 @@ export default {
   'crash-instruction-page-2':'Click "Make bet" and watch the growth of the chart.',
   'crash-instruction-page-3':'Press the "Withdraw" button before the chart crashes and the money burns out, or take it using autocashout.',
 
+  coinflip: 'Coin Flip',
+  'chooseside':'Choose a side',
+  'heads':'Heads',
+  'tails':'Tails',
+
   menu: 'Menu',
   registration: 'Registration',
   login: 'Login',

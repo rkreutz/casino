@@ -58,7 +58,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters('crash', ['bets']),
+    ...mapGetters('coinflip', ['bets']), //QUEBRA
     betsLocal() {
       return [...this.bets].sort((b, a) => a.amount - b.amount)
     },
@@ -94,9 +94,9 @@ export default {
   },
   methods: {
     ...mapMutations({
-      SET_BETS: 'crash/SET_BETS',
-      PUSH_BET: 'crash/PUSH_BET',
-      UPDATE_BET: 'crash/UPDATE_BET',
+      SET_BETS: 'coinflip/SET_BETS',
+      PUSH_BET: 'coinflip/PUSH_BET',
+      UPDATE_BET: 'coinflip/UPDATE_BET',
     }),
   },
 }

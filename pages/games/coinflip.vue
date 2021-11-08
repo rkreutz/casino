@@ -32,8 +32,8 @@
           </div>
           <label class="mb-3 font-semibold text-md" for="auto">{{$t('chooseside')}}</label>
           <div class="grid grid-cols-6 gap-2 mb-4 sm:grid-cols-2">
-            <t-button type="button" variant="outline" @click="bet.rate_auto = 0">Cara</t-button>
-            <t-button type="button" variant="outline" @click="bet.rate_auto = 1">Coroa</t-button>
+            <t-button type="button" variant="outline" @click="bet.rate_auto = 0">{{$t('heads')}}</t-button>
+            <t-button type="button" variant="outline" @click="bet.rate_auto = 1">{{$t('tails')}}</t-button>
           </div>
           <hr class="mt-0 mb-4 divider" />
           <t-button
@@ -79,10 +79,10 @@ export default {
   },
   computed: {
     ...mapState({
-      rate: (state) => state.crash.rate,
+      rate: (state) => state.coinflip.rate, //QUEBRA
     }),
     ...mapGetters({
-      bets: 'crash/bets',
+      bets: 'coinflip/bets', //QUEBRA
     }),
     userBet() {
       if (!this.$auth.loggedIn) return false

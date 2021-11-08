@@ -42,7 +42,7 @@ const coinflipInstance = io
   .on('connection', (socket) => {
     socket
       .on('game:status', async () => {
-        const game = await Coinflip.last()
+        const game = await Crash.last()
         socket.emit('game:status', {
           timeleft: game.start_at - Date.now(),
           bets: await game.bets().with('user').fetch(),
@@ -53,11 +53,11 @@ const coinflipInstance = io
           socket.user && socket.user.length
             ? socket.user
             : await getUser(socket)
-        const game = await Coinflip.last()
+        const game = await Crash.last()
         if (game.start_at < Date.now()) {
           return callback({
             status: 'error',
-            message: 'Игра уже начата! Повторите в следующей.',
+            message: 'O jogo já começou! Repita a seguir',
           })
         }
         if (
@@ -67,14 +67,14 @@ const coinflipInstance = io
         ) {
           return callback({
             status: 'error',
-            message: 'Недостаточно средств на счёте',
+            message: 'Fundos insuficientes na conta',
           })
         }
         try {
           await user.crashes().create({
             amount: data.amount,
             rate_auto: data.rate_auto,
-            coinflip_id: game.id,
+            crash_id: game.id,
           })
           user.balance -= data.amount
           await user.save()
@@ -85,20 +85,20 @@ const coinflipInstance = io
         } catch (e) {
           return callback({
             status: 'error',
-            message: 'Вы уже учавствуете в игре!',
+            message: 'Você já está participando do jogo!',
           })
         }
         callback({
           status: 'success',
-          message: 'Ваша ставка принята!',
+          message: 'Seu lance foi aceito!',
         })
       })
       .on('bet:take', async () => {
-        const game = await Coinflip.last()
+        const game = await Crash.last()
         const user = await getUser(socket)
         const bet = await user
           .crashes()
-          .where('coinflip_id', game.id)
+          .where('crash_id', game.id)
           .where('status', 'await')
           .last()
         if (!bet) {
@@ -115,7 +115,7 @@ const coinflipInstance = io
         coinflipInstance.emit('bet:result', {
           bets: await user
             .crashes()
-            .where('coinflip_id', game.id)
+            .where('crash_id', game.id)
             .with('user')
             .fetch(),
         })
@@ -123,12 +123,13 @@ const coinflipInstance = io
   })
 
 Event.on('coinflip::start', async () => {
+  //console.log('iniciou coinflip start')
   const timeout = 1000 * 10 //AWAITING TIME DO COINFLIP GAME EM SEGUNDOS
   const step = 0.01
   const start = Date.now() + timeout
   const rate = Math.round(rnd({ min: 0, max: 1 }))
 
-  const game = await Coinflip.create({
+  const game = await Crash.create({
     start_at: start,
     rate_final: rate,
   })
@@ -187,7 +188,7 @@ Event.on('coinflip::start', async () => {
         })
       }
       current += step
-    }, 25) //TICK RATE DO COINFLIP GAME
+    }, 50) //TICK RATE DO COINFLIP GAME
   }, timeout)
 })
 
@@ -200,14 +201,14 @@ async function startCoinflip() {
   if (!fakes.length) return
   fakes.forEach(async (bot) => {
     const user = await User.find(bot.id)
-    const game = await Coinflip.last()
+    const game = await Crash.last()
     try {
       setTimeout(async () => {
         const rate = rnd({ min: 1, max: 2 })
         await user.crashes().create({
           amount: rnd({ min: 100, max: 500, integer: true }),
           rate_auto: rate.toFixed(2),
-          coinflip_id: game.id,
+          crashes_id: game.id,
         })
         user.balance -= 100
         await user.save()
@@ -381,7 +382,7 @@ Event.on('crash::start', async () => {
         })
       }
       current += step
-    }, 25) //TICK RATE DO CRASH GAME
+    }, 50) //TICK RATE DO CRASH GAME
   }, timeout)
 })
 

@@ -25,6 +25,11 @@ export default {
   'crash-instruction-page-2':'Clique em "Fazer aposta" e veja o crescimento do gráfico.',
   'crash-instruction-page-3':'Aperte no botão "Sacar" antes que o gráfico quebre e o dinheiro seja perdido ou pegue-o usando a retirada automática.',
 
+  coinflip: 'Coin Flip',
+  'chooseside':'Escolha um lado',
+  'heads':'Cara',
+  'tails':'Coroa',
+
   menu: 'Menu',
   registration: 'Registrar-se',
   login: 'Entrar',
