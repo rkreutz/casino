@@ -18,8 +18,8 @@
           <div class="mb-3 relative">
             <t-input id="amount" v-model="bet.amount"></t-input>
             <div class="absolute top-1/2 right-3 transform -translate-y-1/2 space-x-2 flex items-center">
-              <t-button type="button" variant="outline" class="bg-gray-100 border-none w-10" @click="bet.amount *= 2" >X2</t-button>
-              <t-button type="button" variant="outline" class="bg-gray-100 border-none w-10" @click="bet.amount /= 2" >1/2</t-button>
+              <t-button type="button" variant="outline" class="bg-gray-100 border-none w-10" @click="bet.amount *= 2" >X*2</t-button>
+              <t-button type="button" variant="outline" class="bg-gray-100 border-none w-10" @click="bet.amount /= 2" >X/2</t-button>
             </div>
           </div>
           <div class="grid grid-cols-3 gap-2 mb-4 sm:grid-cols-6">
