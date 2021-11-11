@@ -34,7 +34,7 @@
                 <span> x{{ bet.rate_final }} </span>
                 <span>=</span>
                 <p class="text-green-400">
-                  {{ (bet.amount * bet.rate_final).toFixed(2) }}
+                  {{ (bet.amount * 2).toFixed(0) }} <!-- PLACEHOLDER VALUES. WILL BE CHANGED LATER-->
                 </p>
               </template>
             </div>

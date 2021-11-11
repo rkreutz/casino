@@ -73,6 +73,7 @@ export default {
       bet: {
         amount: 0,
         rate_auto: null,
+        currency: "tibia_coin",
       },
       socket2: null,
     }
@@ -103,8 +104,8 @@ export default {
     'bet.amount'(val) {
       if (val < 0) {
         this.bet.amount = 0
-      } else if (this.$auth.loggedIn && val > this.$auth.user?.balance) {
-        this.bet.amount = this.$auth.user.balance
+      } else if (this.$auth.loggedIn && val > this.$auth.user?.wallet.tibia_coin) {
+        this.bet.amount = this.$auth.user.wallet.tibia_coin
       }
     },
   },
@@ -126,7 +127,7 @@ export default {
       if (this.rate > 1 && this.userBet) {
         return this.socket2.emit('bet:take')
       }
-      if (this.$auth.user.balance === 0) {
+      if (this.$auth.user.wallet.tibia_coin === 0) {
         this.$notify(
           {
             group: 'default',
