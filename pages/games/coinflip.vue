@@ -32,8 +32,8 @@
           </div>
           <label class="mb-3 font-semibold text-md" for="auto">{{$t('chooseside')}}</label>
           <div class="grid grid-cols-6 gap-2 mb-4 sm:grid-cols-2">
-            <t-button type="button" variant="outline" @click="bet.rate_auto = 0">{{$t('heads')}}</t-button>
-            <t-button type="button" variant="outline" @click="bet.rate_auto = 1">{{$t('tails')}}</t-button>
+            <t-button type="button" variant="outline" @click="bet.result = 'heads'">{{$t('heads')}}</t-button>
+            <t-button type="button" variant="outline" @click="bet.result = 'tails'">{{$t('tails')}}</t-button>
           </div>
           <hr class="mt-0 mb-4 divider" />
           <t-button
@@ -72,8 +72,8 @@ export default {
     return {
       bet: {
         amount: 0,
-        rate_auto: null,
-        currency: "tibia_coin",
+        result: null,
+        currency: 'tibia_coin'
       },
       socket2: null,
     }
