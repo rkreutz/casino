@@ -105,7 +105,7 @@ export default {
         icon: '/img/icon/ru.svg',
       },
     ],
-    defaultLocale: 'ru',
+    defaultLocale: 'br',
     lazy: true,
     langDir: 'lang/',
     strategy: 'no_prefix',

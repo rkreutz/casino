@@ -15,8 +15,9 @@
           v-model="user.email"
           class="!pl-12"
           variant="strong"
-          placeholder="Логин или Email"
-        ></t-input>
+          :placeholder="$t('loginoremail')"
+        >
+        </t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
           src="/img/icon/user.svg"
@@ -29,7 +30,7 @@
           class="!pl-12"
           variant="strong"
           type="password"
-          placeholder="Пароль"
+          :placeholder="$t('password')"
         ></t-input>
         <img
           class="absolute top-4 left-4"
@@ -40,13 +41,13 @@
           type="button"
           class="block mt-1 ml-auto text-xs font-semibold leading-none text-right text-primary"
         >
-          Забыли пароль ?
+          {{ $t('forgotpassword') }}
         </button>
       </div>
       <div class="grid grid-cols-1 gap-3">
         <t-button type="submit" variant="primary">
           <div class="flex items-center justify-center py-2">
-            <span>Войти в аккаунт</span>
+            <span>{{ $t('login') }}</span>
             <img class="ml-2" src="/img/icon/next.svg" alt="" />
           </div>
         </t-button>
@@ -55,7 +56,7 @@
           class="font-semibold text-primary"
           @click="showRegister"
         >
-          Создать аккаунт
+          {{ $t('registration') }}
         </button>
       </div>
     </form>

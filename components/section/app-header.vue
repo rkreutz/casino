@@ -37,6 +37,14 @@
           >{{ $t('bonus') }}</nuxt-link
         >
       </nav>
+
+      <div class="flex items-end justify-end flex-1">
+        <button>
+          <DarkIcon v-if="true" class="w-auto h-8" />
+          <LightIcon v-else class="w-auto h-8" />
+        </button>
+      </div>
+
       <user-balance class="hidden sm:flex" />
       <nuxt-link
         v-if="$auth.loggedIn"
@@ -108,6 +116,8 @@ import LogoutIcon from '@/static/img/icon/logout.svg?inline'
 import AppLanguageSwitcher from '@/components/ui/app-language-switcher.vue'
 import UserBalance from '../user/user-balance.vue'
 import AppSidebar from './app-sidebar.vue'
+import DarkIcon from '@/static/img/icon/mode-dark.svg?inline'
+import LightIcon from '@/static/img/icon/mode-light.svg?inline'
 
 export default {
   components: {
@@ -116,6 +126,8 @@ export default {
     AppLanguageSwitcher,
     UserBalance,
     AppSidebar,
+    DarkIcon,
+    LightIcon,
   },
   data() {
     return {

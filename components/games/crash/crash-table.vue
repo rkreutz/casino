@@ -9,33 +9,22 @@
 
           <div class="flex flex-col flex-1 overflow-hidden overflow-ellipsis">
             <div class="flex items-center space-x-3">
-              <p v-if="bet.user.first_name">
-                {{ bet.user.first_name }}
-              </p>
-              <p
-                v-if="bet.user.last_name"
-                class="overflow-hidden whitespace-nowrap overflow-ellipsis"
-              >
-                {{ bet.user.last_name }}
-              </p>
-              <p v-if="!bet.user.last_name && !bet.user.first_name">
-                {{ bet.user.username }}
-              </p>
+              <p v-if="bet.user.first_name">{{ bet.user.first_name }}</p>
+              <p v-if="bet.user.last_name" class="overflow-hidden whitespace-nowrap overflow-ellipsis">{{ bet.user.last_name }}</p>
+              <p v-if="!bet.user.last_name && !bet.user.first_name">{{ bet.user.username }}</p>
             </div>
+
+            <div class="flex items-center space-x-3">
+              <p v-if="bet.auto_percentage">{{ (bet.auto_percentage / 100) }}</p>
+            </div>
+
+
             <div class="flex flex-wrap items-center flex-1 space-x-3">
-              <span
-                class="flex items-center justify-end"
-                :class="{ 'text-red-400': bet.status === 'lose' }"
-              >
-                {{ bet.amount }}
-                <CoinIcon class="w-4 h-4 ml-2" />
-              </span>
+              <span class="flex items-center justify-end" :class="{ 'text-red-400': bet.status === 'lose' }">{{ bet.amount }}<CoinIcon class="w-4 h-4 ml-2" /></span>
               <template v-if="bet.status === 'win'">
                 <span> x{{ bet.final_percentage / 100 }} </span>
                 <span>=</span>
-                <p class="text-green-400">
-                  {{ (bet.amount * bet.final_percentage / 100).toFixed(0) }}
-                </p>
+                <p class="text-green-400">{{ (bet.amount * bet.final_percentage / 100).toFixed(0) }}</p>
               </template>
             </div>
           </div>

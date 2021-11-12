@@ -34,6 +34,8 @@ export default {
   registration: 'Registration',
   login: 'Login',
   'loginoremail': 'Login or Email',
+  'password': 'Password',
+  'forgotpassword': 'Forgot your password?',
   'profile-edit': 'Edit profile',
   'profile-you': 'Your profile',
   'profile-exit': 'Logout',

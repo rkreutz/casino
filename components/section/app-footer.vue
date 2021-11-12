@@ -4,20 +4,20 @@
       class="container grid h-full grid-flow-row-dense gap-8 md:grid-flow-col auto-cols-max"
     >
       <div class="flex items-start space-x-2">
-        <TelegramIcon class="w-4 h-auto" />
+        <DiscordIcon class="w-4 h-auto" />
         <div class="flex flex-col text-sm leading-none">
-          <span class="mb-1">Телеграм</span>
-          <a href="https://t.me/ez_cash_gg" target="_blank">
-            <strong>@ez_cash_gg</strong>
+          <span class="mb-1">Discord</span>
+          <a href="https://discord.com" target="_blank">
+            <strong>Moros DAO</strong>
           </a>
         </div>
       </div>
       <div class="flex items-start space-x-2">
         <VkIcon class="w-4 h-auto" />
         <div class="flex flex-col text-sm leading-none">
-          <span class="mb-1">ВКонтакте</span>
-          <a href="https://vk.com/ezcash_official" target="_blank">
-            <strong>ezcash_official</strong>
+          <span class="mb-1">Social</span>
+          <a href="https://teste123.com.br" target="_blank">
+            <strong>teste123</strong>
           </a>
         </div>
       </div>
@@ -25,17 +25,15 @@
         <EmailIcon class="w-4 h-auto" />
         <div class="flex flex-col text-sm leading-none">
           <span class="mb-1">Email</span>
-          <a href="mailto:help@ezcash.gg" target="_blank">
-            <strong>help@ezcash.gg</strong>
+          <a href="mailto:teste123@gmail.com" target="_blank">
+            <strong>teste123@gmail.com</strong>
           </a>
         </div>
       </div>
       <div class="flex flex-col space-y-1 leading-none">
-        <a href="#" class="font-semibold">Пользовательское соглашение</a>
-        <a href="#" class="font-semibold">Политика конфиденциальности</a>
-        <nuxt-link :to="{ name: 'help' }" class="font-semibold"
-          >Помощь</nuxt-link
-        >
+        <a href="#" class="font-semibold">Termos de uso</a>
+        <a href="#" class="font-semibold">Política de Privacidade</a>
+        <nuxt-link :to="{ name: 'help' }" class="font-semibold">{{ $t('help') }}</nuxt-link>
       </div>
     </div>
   </footer>
@@ -45,9 +43,10 @@
 import TelegramIcon from '@/static/img/icon/social/telegram.svg?inline'
 import VkIcon from '@/static/img/icon/social/vk.svg?inline'
 import EmailIcon from '@/static/img/icon/email.svg?inline'
+import DiscordIcon from '@/static/img/social/discord.svg?inline'
 
 export default {
-  components: { TelegramIcon, VkIcon, EmailIcon },
+  components: { TelegramIcon, VkIcon, EmailIcon, DiscordIcon },
 }
 </script>
 
