@@ -6,7 +6,7 @@
       </svg>
     </template>
     <template #header>
-      <h3>Регистрация</h3>
+      <h3>{{$t('registration')}}</h3>
     </template>
     <section-social class="mb-5" />
     <form class="grid grid-cols-1 gap-5" @submit.prevent="register">
@@ -15,7 +15,7 @@
           v-model="user.username"
           class="!pl-12"
           variant="strong"
-          placeholder="Логин"
+          :placeholder="$t('user')"
         ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
@@ -29,7 +29,7 @@
           class="!pl-12"
           variant="strong"
           type="password"
-          placeholder="Пароль"
+          :placeholder="$t('password')"
         ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
@@ -43,7 +43,7 @@
           class="!pl-12"
           variant="strong"
           type="password"
-          placeholder="Повторите пароль"
+          :placeholder="$t('repeatpassword')"
         ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
@@ -57,7 +57,7 @@
           class="!pl-12"
           variant="strong"
           type="email"
-          placeholder="Электронная почта"
+          :placeholder="$t('your-email')"
         ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
@@ -65,15 +65,13 @@
           alt=""
         />
       </div>
-      <p>
-        Регистрируясь вы принимаете условия<br />
+      <p>{{$t('registering-terms')}}<br />
         <a href="#" class="font-semibold text-primary"
-          >пользовательского соглашения</a
-        >
+          >{{$t('user-agreement')}}</a>
       </p>
       <t-button type="submit" variant="primary">
         <div class="flex items-center justify-center py-2">
-          <span>Зарегистрироваться</span>
+          <span>{{$t('register-now')}}</span>
           <img class="ml-2" src="/img/icon/next.svg" alt="" />
         </div>
       </t-button>

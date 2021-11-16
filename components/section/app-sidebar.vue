@@ -7,19 +7,19 @@
             <use xlink:href="/img/icon/free/sprite.svg#close"></use>
           </svg>
         </button>
-        <h1 class="sidebar__title">МЕНЮ</h1>
+        <h1 class="sidebar__title">{{ $t('menu') }}</h1>
         <nav class="sidebar__nav">
           <nuxt-link
             :to="{ name: 'help' }"
             class="sidebar__link"
             :exact-active-class="`sidebar__link--active`"
-            >Помощь</nuxt-link
+            >{{ $t('help') }}</nuxt-link
           >
           <nuxt-link
             :to="{ name: 'free-coins' }"
             class="sidebar__link"
             :exact-active-class="`sidebar__link--active`"
-            >Бесплатные монеты</nuxt-link
+            >{{ $t('freecoins') }}</nuxt-link
           >
         </nav>
       </div>
@@ -28,6 +28,9 @@
         <hr class="my-4 divider" />
         <div class="flex items-center">
           <div class="flex items-center space-x-3">
+            <a href="#">
+              <DiscordIcon class="w-auto h-6" />
+            </a>
             <a href="#">
               <TelegramIcon class="w-auto h-6" />
             </a>
@@ -53,6 +56,8 @@ import TelegramIcon from '@/static/img/icon/social/telegram.svg?inline'
 import VkIcon from '@/static/img/icon/social/vk.svg?inline'
 import DarkIcon from '@/static/img/icon/mode-dark.svg?inline'
 import LightIcon from '@/static/img/icon/mode-light.svg?inline'
+import DiscordIcon from '@/static/img/social/discord.svg?inline'
+
 export default {
   components: {
     appLanguageSwitcher,
@@ -60,6 +65,7 @@ export default {
     VkIcon,
     DarkIcon,
     LightIcon,
+    DiscordIcon,
   },
   props: {
     active: {

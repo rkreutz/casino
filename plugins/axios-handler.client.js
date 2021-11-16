@@ -42,7 +42,7 @@ export default function ({ $axios, $notify }) {
 
     switch (code) {
       case 401:
-        message = 'Вы не авторизованы!'
+        message = 'You are not authorized'
         break
     }
 

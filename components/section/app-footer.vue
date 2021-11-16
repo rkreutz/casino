@@ -31,8 +31,8 @@
         </div>
       </div>
       <div class="flex flex-col space-y-1 leading-none">
-        <a href="#" class="font-semibold">Termos de uso</a>
-        <a href="#" class="font-semibold">Política de Privacidade</a>
+        <a href="#" class="font-semibold">{{ $t('user-agreement') }}</a>
+        <a href="#" class="font-semibold">{{ $t('privacy-policy') }}</a>
         <nuxt-link :to="{ name: 'help' }" class="font-semibold">{{ $t('help') }}</nuxt-link>
       </div>
     </div>

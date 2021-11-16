@@ -12,9 +12,7 @@
     <div class="grid grid-cols-8 gap-1.5">
       <div class="col-span-8 p-12 bg-white lg:col-span-3 rounded-xl">
         <form class="flex flex-col" @submit.prevent="betPlace">
-          <label class="mb-3 font-semibold text-md" for="amount">{{
-            $t('bet-amount')
-          }}</label>
+          <label class="mb-3 font-semibold text-md" for="amount">{{$t('bet-amount')}}</label>
           <div class="mb-3 relative">
             <t-input id="amount" v-model="bet.amount"></t-input>
             <div class="absolute top-1/2 right-3 transform -translate-y-1/2 space-x-2 flex items-center">
@@ -28,7 +26,7 @@
             <t-button type="button" variant="outline" @click="bet.amount += 10">+10</t-button>
             <t-button type="button" variant="outline" @click="bet.amount += 100">+100</t-button>
             <t-button type="button" variant="outline" @click="bet.amount += 500">+500</t-button>
-            <t-button type="button" variant="outline" @click="bet.amount += 100000">Все</t-button>
+            <t-button type="button" variant="outline" @click="bet.amount += 1000000">Все</t-button>
           </div>
           <label class="mb-3 font-semibold text-md" for="auto">{{$t('chooseside')}}</label>
           <div class="grid grid-cols-6 gap-2 mb-4 sm:grid-cols-2">
@@ -40,7 +38,7 @@
             v-tooltip="{
               content: !userBet && rate > 1 ? $t('game-started') : '',
             }"
-            :disabled="(rate > 1 && !userBet) || (userBet && rate === 1)"
+            :disabled="(rate > 1 && !userBet) || (userBet && rate === 1) || (bet.result == null)"
             type="submit"
             class="!py-4"
             variant="primary"
@@ -80,10 +78,10 @@ export default {
   },
   computed: {
     ...mapState({
-      rate: (state) => state.coinflip.rate, //QUEBRA
+      rate: (state) => state.coinflip.rate,
     }),
     ...mapGetters({
-      bets: 'coinflip/bets', //QUEBRA
+      bets: 'coinflip/bets',
     }),
     userBet() {
       if (!this.$auth.loggedIn) return false
@@ -96,7 +94,7 @@ export default {
         return this.$t('await-start')
       }
       return this.userBet && this.rate > 1
-        ? this.$t('withdraw-on') + ` (x${this.rate})`
+        ? this.$t('withdraw-on') + ` (x${this.rate})` //REMOVE THIS LATER
         : this.$t('make-bet')
     },
   },
@@ -110,7 +108,6 @@ export default {
     },
   },
   beforeMount() {
-    console.log('beforeMount()')
     this.socket2 = this.$nuxtSocket({
       channel: 'coinflip',
       extraHeaders: {

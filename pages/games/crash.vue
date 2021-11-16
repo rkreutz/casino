@@ -12,9 +12,7 @@
     <div class="grid grid-cols-8 gap-1.5">
       <div class="col-span-8 p-12 bg-white lg:col-span-3 rounded-xl">
         <form class="flex flex-col" @submit.prevent="betPlace">
-          <label class="mb-3 font-semibold text-md" for="amount">{{
-            $t('bet-amount')
-          }}</label>
+          <label class="mb-3 font-semibold text-md" for="amount">{{$t('bet-amount')}}</label>
           <div class="mb-3 relative">
             <t-input id="amount" v-model="bet.amount"></t-input>
             <div class="absolute top-1/2 right-3 transform -translate-y-1/2 space-x-2 flex items-center">
@@ -28,17 +26,10 @@
             <t-button type="button" variant="outline" @click="bet.amount += 10">+10</t-button>
             <t-button type="button" variant="outline" @click="bet.amount += 100">+100</t-button>
             <t-button type="button" variant="outline" @click="bet.amount += 500">+500</t-button>
-            <t-button type="button" variant="outline" @click="bet.amount += 100000">Все</t-button>
+            <t-button type="button" variant="outline" @click="bet.amount += 1000000">Все</t-button>
           </div>
-          <label class="mb-3 font-semibold text-md" for="auto">{{
-            $t('autocashout')
-          }}</label>
-          <t-input
-            id="auto"
-            v-model="bet.rate_auto"
-            class="mb-4"
-            :placeholder="$t('rate')"
-          ></t-input>
+          <label class="mb-3 font-semibold text-md" for="auto">{{$t('autocashout')}}</label>
+          <t-input id="auto" v-model="bet.rate_auto" class="mb-4" :placeholder="$t('rate')"></t-input>
           <hr class="mt-0 mb-4 divider" />
           <t-button
             v-tooltip="{
@@ -114,7 +105,6 @@ export default {
     },
   },
   beforeMount() {
-    console.log('beforeMount()')
     this.socket = this.$nuxtSocket({
       channel: 'crash',
       extraHeaders: {

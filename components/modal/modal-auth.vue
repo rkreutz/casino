@@ -16,8 +16,7 @@
           class="!pl-12"
           variant="strong"
           :placeholder="$t('loginoremail')"
-        >
-        </t-input>
+        ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
           src="/img/icon/user.svg"
